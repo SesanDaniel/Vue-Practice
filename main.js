@@ -5,6 +5,7 @@ const app = Vue.createApp({
       product: "Socks",
       brand: "Vue Mastery",
       selectedVariant: 0,
+      onSale: true,
       details: ["50% cotton", "30% wool", "20% polyester"],
       variants: [
         {
@@ -42,5 +43,8 @@ const app = Vue.createApp({
     inStock() {
       return this.variants[this.selectedVariant].quantity;
     },
+    note() {
+        return this.brand + " " + this.product + " " + "is on sale"
+    }
   },
 });
